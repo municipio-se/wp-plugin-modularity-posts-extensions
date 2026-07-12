@@ -43,8 +43,10 @@ The plugin consumes these Municipio and ACF filters:
   replacing current choices.
 - `Modularity/Module/Posts/template` selects the plugin-owned composition for
   `mixed` only.
+- `Modularity/Module/posts/TemplatePath` makes the plugin view discoverable
+  during Modularity's initial template lookup.
 - `/Modularity/externalViewPath` combines the plugin view root with Municipio's
-  Posts partials.
+  Posts partials after the template has been selected.
 
 The private template allowlist in Municipio 6.43.2 intentionally falls back to
 list preparation for unknown saved values. The plugin uses that prepared

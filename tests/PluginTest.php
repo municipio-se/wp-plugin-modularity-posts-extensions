@@ -26,9 +26,23 @@ final class PluginTest extends TestCase
             [
                 'acf/load_field/key=field_571dfd4c0d9d9',
                 'Modularity/Module/Posts/template',
+                'Modularity/Module/posts/TemplatePath',
                 '/Modularity/externalViewPath',
             ],
             array_column($GLOBALS['modularity_posts_test_filters'], 0),
+        );
+    }
+
+    public function testItAddsItsViewRootToTheInitialTemplateLookup(): void
+    {
+        $paths = (new Plugin())->registerTemplatePaths(['/theme/Modularity/source/php/Module/Posts/views']);
+
+        static::assertSame(
+            [
+                '/theme/Modularity/source/php/Module/Posts/views',
+                dirname(__DIR__) . '/views',
+            ],
+            $paths,
         );
     }
 

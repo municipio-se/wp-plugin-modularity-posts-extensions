@@ -26,8 +26,15 @@ final class Plugin
         add_filter('Modularity/Module/Posts/template', [$this, 'routeTemplate'], 10, 4);
 
         /**
-         * Blade needs both the built-in Posts views and the plugin view root: the plugin owns the
-         * mixed composition while Municipio continues to own card, collection, and title partials.
+         * Modularity resolves the template filename before it initializes Blade. This path hook
+         * makes the plugin-owned mixed view discoverable during that first lookup.
+         */
+        add_filter('Modularity/Module/posts/TemplatePath', [$this, 'registerTemplatePaths']);
+
+        /**
+         * Once the template is found, Blade needs both the built-in Posts views and the plugin
+         * view root: the plugin owns the mixed composition while Municipio continues to own card,
+         * collection, and title partials.
          */
         add_filter('/Modularity/externalViewPath', [$this, 'registerViewPaths']);
     }
@@ -45,6 +52,17 @@ final class Plugin
             [],
             MODULARITY_POSTS_VERSION,
         );
+    }
+
+    /**
+     * @param array<int, string> $paths
+     * @return array<int, string>
+     */
+    public function registerTemplatePaths(array $paths): array
+    {
+        $paths[] = MODULARITY_POSTS_PATH . 'views';
+
+        return array_values(array_unique($paths));
     }
 
     /**
