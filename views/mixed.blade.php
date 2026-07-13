@@ -7,17 +7,17 @@
 
 @if (!empty($mixedCards) || !empty($mixedList))
   <div
-    class="modularity-posts-mixed{{ !empty($preamble) || (!$hideTitle && !empty($postTitle)) ? ' u-margin__top--4' : '' }}"
+    class="modularity-posts-extensions-mixed{{ !empty($preamble) || (!$hideTitle && !empty($postTitle)) ? ' u-margin__top--4' : '' }}"
     @if (!$hideTitle && !empty($postTitle)) aria-labelledby="{{ 'mod-posts-' . $ID . '-label' }}" @endif
   >
     @foreach ($mixedCards as $post)
-      <div class="modularity-posts-mixed__card">
+      <div class="modularity-posts-extensions-mixed__card">
         @include('partials.post.card')
       </div>
     @endforeach
 
     @if (!empty($mixedList))
-      <div class="modularity-posts-mixed__list">
+      <div class="modularity-posts-extensions-mixed__list">
         @card([
             'heading' => false,
             'attributeList' => [

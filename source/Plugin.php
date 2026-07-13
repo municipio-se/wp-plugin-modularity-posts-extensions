@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MunicipioModularityPosts;
+namespace MunicipioModularityPostsExtensions;
 
 final class Plugin
 {
@@ -37,16 +37,16 @@ final class Plugin
 
     public function loadTextDomain(): void
     {
-        load_plugin_textdomain('modularity-posts', false, 'modularity-posts/languages');
+        load_plugin_textdomain('modularity-posts-extensions', false, 'modularity-posts-extensions/languages');
     }
 
     public function enqueueStyles(): void
     {
         wp_enqueue_style(
-            'modularity-posts',
-            MODULARITY_POSTS_URL . 'assets/css/mixed.css',
+            'modularity-posts-extensions',
+            MODULARITY_POSTS_EXTENSIONS_URL . 'assets/css/mixed.css',
             [],
-            MODULARITY_POSTS_VERSION,
+            MODULARITY_POSTS_EXTENSIONS_VERSION,
         );
     }
 
@@ -56,7 +56,7 @@ final class Plugin
      */
     public function registerTemplatePaths(array $paths): array
     {
-        $paths[] = MODULARITY_POSTS_PATH . 'views';
+        $paths[] = MODULARITY_POSTS_EXTENSIONS_PATH . 'views';
 
         return array_values(array_unique($paths));
     }
@@ -74,7 +74,7 @@ final class Plugin
             $postsPaths[] = MODULARITY_PATH . 'source/php/Module/Posts/views';
         }
 
-        $postsPaths[] = MODULARITY_POSTS_PATH . 'views';
+        $postsPaths[] = MODULARITY_POSTS_EXTENSIONS_PATH . 'views';
         $paths['mod-posts'] = array_values(array_unique(array_filter($postsPaths, 'is_string')));
 
         return $paths;

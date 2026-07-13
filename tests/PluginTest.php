@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace MunicipioModularityPosts\Tests;
+namespace MunicipioModularityPostsExtensions\Tests;
 
-use MunicipioModularityPosts\Plugin;
+use MunicipioModularityPostsExtensions\Plugin;
 use PHPUnit\Framework\TestCase;
 
 final class PluginTest extends TestCase
 {
     protected function setUp(): void
     {
-        $GLOBALS['modularity_posts_test_actions'] = [];
-        $GLOBALS['modularity_posts_test_filters'] = [];
-        $GLOBALS['modularity_posts_test_styles'] = [];
-        $GLOBALS['modularity_posts_test_textdomains'] = [];
+        $GLOBALS['modularity_posts_extensions_test_actions'] = [];
+        $GLOBALS['modularity_posts_extensions_test_filters'] = [];
+        $GLOBALS['modularity_posts_extensions_test_styles'] = [];
+        $GLOBALS['modularity_posts_extensions_test_textdomains'] = [];
     }
 
     public function testItRegistersOnlyRuntimeHooksAndNoWriteMigration(): void
@@ -23,7 +23,7 @@ final class PluginTest extends TestCase
 
         static::assertSame(
             ['init', 'wp_enqueue_scripts', 'acf/render_field/key=field_571dfd4c0d9d9'],
-            array_column($GLOBALS['modularity_posts_test_actions'], 0),
+            array_column($GLOBALS['modularity_posts_extensions_test_actions'], 0),
         );
         static::assertSame(
             [
@@ -31,7 +31,7 @@ final class PluginTest extends TestCase
                 'Modularity/Module/posts/TemplatePath',
                 '/Modularity/externalViewPath',
             ],
-            array_column($GLOBALS['modularity_posts_test_filters'], 0),
+            array_column($GLOBALS['modularity_posts_extensions_test_filters'], 0),
         );
     }
 
@@ -56,18 +56,18 @@ final class PluginTest extends TestCase
 
         static::assertSame(
             [
-                ['modularity-posts', false, 'modularity-posts/languages'],
+                ['modularity-posts-extensions', false, 'modularity-posts-extensions/languages'],
             ],
-            $GLOBALS['modularity_posts_test_textdomains'],
+            $GLOBALS['modularity_posts_extensions_test_textdomains'],
         );
         static::assertSame(
             [
-                'modularity-posts',
-                'https://example.test/wp-content/plugins/modularity-posts/assets/css/mixed.css',
+                'modularity-posts-extensions',
+                'https://example.test/wp-content/plugins/modularity-posts-extensions/assets/css/mixed.css',
                 [],
                 '0.1.0',
             ],
-            $GLOBALS['modularity_posts_test_styles'][0],
+            $GLOBALS['modularity_posts_extensions_test_styles'][0],
         );
     }
 
@@ -136,7 +136,7 @@ final class PluginTest extends TestCase
 
     public function testTheSwedishRuntimeCatalogContainsTheContextualLabel(): void
     {
-        $catalog = require dirname(__DIR__) . '/languages/modularity-posts-sv_SE.l10n.php';
+        $catalog = require dirname(__DIR__) . '/languages/modularity-posts-extensions-sv_SE.l10n.php';
 
         static::assertSame('Kort och lista', $catalog['messages']["Posts Module Display Mode\x04Cards and list"]);
     }

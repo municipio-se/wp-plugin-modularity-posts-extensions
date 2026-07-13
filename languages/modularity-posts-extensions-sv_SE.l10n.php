@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'project-id-version' => 'Modularity Posts 0.1.0',
+    'project-id-version' => 'Modularity Posts Extensions 0.1.0',
     'language' => 'sv_SE',
     'plural-forms' => 'nplurals=2; plural=n != 1;',
     'messages' => [

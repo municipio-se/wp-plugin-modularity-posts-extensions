@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MunicipioModularityPosts\Tests;
+namespace MunicipioModularityPostsExtensions\Tests;
 
-use MunicipioModularityPosts\Fields;
+use MunicipioModularityPostsExtensions\Fields;
 use PHPUnit\Framework\TestCase;
 
 final class FieldsTest extends TestCase

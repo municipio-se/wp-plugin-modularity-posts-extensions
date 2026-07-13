@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MunicipioModularityPosts\Tests;
+namespace MunicipioModularityPostsExtensions\Tests;
 
-use MunicipioModularityPosts\MixedLayout;
+use MunicipioModularityPostsExtensions\MixedLayout;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

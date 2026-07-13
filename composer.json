@@ -1,6 +1,6 @@
 {
-  "name": "municipio/wp-plugin-modularity-posts",
-  "description": "Focused Posts module display modes for modern Municipio installations.",
+  "name": "municipio/wp-plugin-modularity-posts-extensions",
+  "description": "Focused extensions for the built-in Posts module in modern Municipio installations.",
   "type": "wordpress-plugin",
   "license": "MIT",
   "require": {
@@ -13,16 +13,16 @@
   },
   "autoload": {
     "psr-4": {
-      "MunicipioModularityPosts\\": "source/"
+      "MunicipioModularityPostsExtensions\\": "source/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "MunicipioModularityPosts\\Tests\\": "tests/"
+      "MunicipioModularityPostsExtensions\\Tests\\": "tests/"
     }
   },
   "extra": {
-    "installer-name": "modularity-posts"
+    "installer-name": "modularity-posts-extensions"
   },
   "config": {
     "allow-plugins": {

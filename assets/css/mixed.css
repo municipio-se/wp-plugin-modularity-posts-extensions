@@ -1,11 +1,11 @@
-.modularity-posts-mixed {
+.modularity-posts-extensions-mixed {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
   gap: var(--grid-gap, calc(var(--base, 8px) * var(--o-grid-gap, 4)));
   align-items: stretch;
 }
 
-.modularity-posts-mixed__card,
-.modularity-posts-mixed__list {
+.modularity-posts-extensions-mixed__card,
+.modularity-posts-extensions-mixed__list {
   min-width: 0;
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MunicipioModularityPosts;
+namespace MunicipioModularityPostsExtensions;
 
 final class MixedLayout
 {

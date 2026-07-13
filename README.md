@@ -1,8 +1,9 @@
-# Modularity Posts
+# Modularity Posts Extensions
 
-Modularity Posts ports focused Posts module display behavior from Municipio LTS
-to modern Municipio without restoring Municipio Extended or the deprecated
-standalone Modularity plugin.
+Modularity Posts Extensions adds focused display behavior from Municipio LTS to
+the Posts module built into modern Municipio. It extends that module without
+owning or replacing it, restoring Municipio Extended, or depending on the
+deprecated standalone Modularity plugin.
 
 ## Supported first port
 
@@ -21,8 +22,9 @@ other LTS Posts layouts are intentionally outside this release.
 
 ## Installation
 
-Install `municipio/wp-plugin-modularity-posts` with Composer. Composer
-Installers places it in `wp-content/plugins/modularity-posts` through
+Install `municipio/wp-plugin-modularity-posts-extensions` with Composer.
+Composer Installers places it in
+`wp-content/plugins/modularity-posts-extensions` through
 `extra.installer-name`.
 
 The plugin supports modern Municipio only. The initial compatibility contract is

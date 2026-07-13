@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MunicipioModularityPosts;
+namespace MunicipioModularityPostsExtensions;
 
 final class Fields
 {
@@ -22,10 +22,10 @@ final class Fields
         }
 
         $checked = ($field['value'] ?? null) === 'mixed' ? ' checked="checked"' : '';
-        $label = _x('Cards and list', 'Posts Module Display Mode', 'modularity-posts');
+        $label = _x('Cards and list', 'Posts Module Display Mode', 'modularity-posts-extensions');
 
         printf(
-            '<label class="image-select__label acf-input modularity-posts-mixed-choice">'
+            '<label class="image-select__label acf-input modularity-posts-extensions-mixed-choice">'
             . '<input class="image-select__radio" type="radio" name="%s" value="mixed"%s>'
             . '<svg class="image-select__checkmark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">'
             . '<path d="M32 2C15.4 2 2 15.4 2 32s13.4 30 30 30 30-13.4 30-30S48.6 2 32 2Zm-7 48L11 35.6l7-7.2 7 7.2L46 14l7 7.2Z" fill="#43a047"/>'
