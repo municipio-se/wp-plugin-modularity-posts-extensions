@@ -39,8 +39,9 @@ as soon as the plugin is active. Deactivation leaves stored metadata untouched.
 
 The plugin consumes these Municipio and ACF filters:
 
-- `acf/load_field/key=field_571dfd4c0d9d9` adds the `mixed` choice without
-  replacing current choices.
+- `acf/render_field/key=field_571dfd4c0d9d9` renders the plugin-owned `mixed`
+  option beside Municipio's current image choices without changing their field
+  schema.
 - `Modularity/Module/Posts/template` selects the plugin-owned composition for
   `mixed` only.
 - `Modularity/Module/posts/TemplatePath` makes the plugin view discoverable

@@ -13,11 +13,7 @@ final class Plugin
         add_action('init', [$this, 'loadTextDomain'], -10);
         add_action('wp_enqueue_scripts', [$this, 'enqueueStyles']);
 
-        /**
-         * Adds the preserved LTS value to Municipio's existing Posts display field without
-         * replacing choices supplied by the active Municipio version.
-         */
-        add_filter('acf/load_field/key=' . self::POSTS_FIELD_KEY, [Fields::class, 'addMixedChoice'], 99);
+        add_action('acf/render_field/key=' . self::POSTS_FIELD_KEY, [Fields::class, 'renderMixedChoice'], 10);
 
         /**
          * Municipio resolves the final Blade name after preparing the selected layout data. The

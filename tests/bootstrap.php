@@ -38,4 +38,14 @@ function _x(string $text): string
     return $text;
 }
 
+function esc_attr(string $text): string
+{
+    return htmlspecialchars($text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+
+function esc_html(string $text): string
+{
+    return htmlspecialchars($text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+
 require dirname(__DIR__) . '/vendor/autoload.php';

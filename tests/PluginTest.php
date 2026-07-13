@@ -21,10 +21,12 @@ final class PluginTest extends TestCase
     {
         (new Plugin())->register();
 
-        static::assertSame(['init', 'wp_enqueue_scripts'], array_column($GLOBALS['modularity_posts_test_actions'], 0));
+        static::assertSame(
+            ['init', 'wp_enqueue_scripts', 'acf/render_field/key=field_571dfd4c0d9d9'],
+            array_column($GLOBALS['modularity_posts_test_actions'], 0),
+        );
         static::assertSame(
             [
-                'acf/load_field/key=field_571dfd4c0d9d9',
                 'Modularity/Module/Posts/template',
                 'Modularity/Module/posts/TemplatePath',
                 '/Modularity/externalViewPath',
