@@ -92,12 +92,36 @@ final class Plugin
         }
 
         $posts = $data['posts'] ?? [];
-        $partition = MixedLayout::partition(is_array($posts) ? $posts : []);
+        $posts = $this->decoratePosts($module, is_array($posts) ? $posts : []);
+        $partition = MixedLayout::partition($posts);
 
         $module->data['mixedCards'] = $partition['cards'];
         $module->data['mixedList'] = $partition['list'];
         $module->data['showDate'] = in_array('date', $fields['posts_fields'] ?? [], true);
 
         return 'mixed.blade.php';
+    }
+
+    /**
+     * Modularity turns WP_Post into Municipio's decorated post objects only inside the
+     * per-template controllers, and no MixedTemplate controller exists, so the mixed route
+     * still holds raw WP_Post here. Reuse the built-in list preparation: the mixed view and
+     * Municipio's card partial depend on exactly what it provides (getPermalink/getTitle plus
+     * icon, classList, and attributeList).
+     *
+     * @param array<int, mixed> $posts
+     * @return array<int, mixed>
+     */
+    private function decoratePosts(object $module, array $posts): array
+    {
+        $listTemplate = '\Modularity\Module\Posts\TemplateController\ListTemplate';
+
+        if (!reset($posts) instanceof \WP_Post || !class_exists($listTemplate)) {
+            return $posts;
+        }
+
+        $decorated = (new $listTemplate($module))->data['posts'] ?? null;
+
+        return is_array($decorated) ? $decorated : $posts;
     }
 }
