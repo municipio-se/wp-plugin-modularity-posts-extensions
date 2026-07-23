@@ -12,6 +12,7 @@ $GLOBALS['modularity_posts_extensions_test_actions'] = [];
 $GLOBALS['modularity_posts_extensions_test_filters'] = [];
 $GLOBALS['modularity_posts_extensions_test_styles'] = [];
 $GLOBALS['modularity_posts_extensions_test_textdomains'] = [];
+$GLOBALS['modularity_posts_extensions_test_list_template_modules'] = [];
 
 function add_action(string $hook, callable $callback, int $priority = 10, int $acceptedArgs = 1): void
 {
@@ -48,4 +49,5 @@ function esc_html(string $text): string
     return htmlspecialchars($text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 
+require __DIR__ . '/support/modularity-stubs.php';
 require dirname(__DIR__) . '/vendor/autoload.php';

@@ -15,6 +15,7 @@ final class PluginTest extends TestCase
         $GLOBALS['modularity_posts_extensions_test_filters'] = [];
         $GLOBALS['modularity_posts_extensions_test_styles'] = [];
         $GLOBALS['modularity_posts_extensions_test_textdomains'] = [];
+        $GLOBALS['modularity_posts_extensions_test_list_template_modules'] = [];
     }
 
     public function testItRegistersOnlyRuntimeHooksAndNoWriteMigration(): void
