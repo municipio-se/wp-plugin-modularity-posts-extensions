@@ -103,11 +103,14 @@ final class Plugin
     }
 
     /**
-     * Modularity turns WP_Post into Municipio's decorated post objects only inside the
-     * per-template controllers, and no MixedTemplate controller exists, so the mixed route
-     * still holds raw WP_Post here. Reuse the built-in list preparation: the mixed view and
-     * Municipio's card partial depend on exactly what it provides (getPermalink/getTitle plus
-     * icon, classList, and attributeList).
+     * Municipio 6.36.8 lets the unknown mixed template bypass all per-template controllers,
+     * leaving raw WP_Post here. Reuse the built-in list preparation: the mixed view and
+     * Municipio's card partial depend on exactly what it provides (getPermalink/getTitle
+     * plus icon, classList, and attributeList).
+     *
+     * Municipio 6.43.0 and later fall back to the list controller before this filter, so
+     * their posts are already decorated. The WP_Post guard deliberately leaves that newer
+     * path untouched while retaining compatibility with older supported baselines.
      *
      * @param array<int, mixed> $posts
      * @return array<int, mixed>
