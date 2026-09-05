@@ -149,5 +149,10 @@ final class PluginTest extends TestCase
         static::assertIsString($view);
         static::assertSame(1, substr_count($view, "@include('partials.more')"));
         static::assertStringNotContainsString('$loop->index', $view);
+        static::assertSame(1, substr_count($view, "'aria-labelledby'"));
+        static::assertStringContainsString(
+            "'aria-labelledby' => 'post-' . \$ID . '-' . \$post->getId() . '-title'",
+            $view,
+        );
     }
 }
