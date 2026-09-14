@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Modularity Posts Extensions
  * Description: Adds focused Posts module display modes to modern Municipio.
- * Version: 0.1.0
+ * Version: 1.0.0
  * Requires PHP: 8.2
  * Author: Whitespace
  * License: MIT
@@ -24,7 +24,7 @@ define('MODULARITY_POSTS_EXTENSIONS_FILE', __FILE__);
  */
 define('MODULARITY_POSTS_EXTENSIONS_PATH', trailingslashit(WP_PLUGIN_DIR) . 'modularity-posts-extensions/');
 define('MODULARITY_POSTS_EXTENSIONS_URL', trailingslashit(plugins_url('modularity-posts-extensions')));
-define('MODULARITY_POSTS_EXTENSIONS_VERSION', '0.1.0');
+define('MODULARITY_POSTS_EXTENSIONS_VERSION', '1.0.0');
 
 $autoload = MODULARITY_POSTS_EXTENSIONS_PATH . 'vendor/autoload.php';
 

@@ -22,10 +22,13 @@ other LTS Posts layouts are intentionally outside this release.
 
 ## Installation
 
+Release candidates, verification, publication and rollback are documented in
+[RELEASING.md](RELEASING.md). See [CHANGELOG.md](CHANGELOG.md) for version
+history.
+
 Install `municipio/wp-plugin-modularity-posts-extensions` with Composer.
 Composer Installers places it in
-`wp-content/plugins/modularity-posts-extensions` through
-`extra.installer-name`.
+`wp-content/plugins/modularity-posts-extensions` through `extra.installer-name`.
 
 The plugin supports modern Municipio only. The initial compatibility contract is
 verified against `helsingborg-stad/municipio` 6.43.2, where Modularity is
